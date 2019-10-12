@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Audio_Capture_and_Playback" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-4x-6sU">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" image="record" id="Lkd-Gg-1M2">
+                                        <connections>
+                                            <action selector="recordButtonPress:" destination="BYZ-38-t0r" id="6zI-ea-gv0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="play" image="play" id="jmK-cU-23q">
+                                        <connections>
+                                            <action selector="playButtonPress:" destination="BYZ-38-t0r" id="jrA-Eh-tpH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title=".m4a" id="9AR-kW-MUX">
+                                        <connections>
+                                            <action selector="m4aButtonPress:" destination="BYZ-38-t0r" id="QgV-IN-uos"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title=".wav" id="qC3-OY-eQs">
+                                        <connections>
+                                            <action selector="wavButtonPress:" destination="BYZ-38-t0r" id="zT4-Vg-S7W"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="xbo-Mx-EZB">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="7iK-uD-xH4">
+                                            <rect key="frame" x="192.5" y="5" width="183" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="volumeSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="seS-mx-jEb"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyY-mW-Bj2">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uZp-4x-6sU" secondAttribute="bottom" id="2Mu-xx-U25"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uZp-4x-6sU" secondAttribute="trailing" id="4h1-qD-SM1"/>
+                            <constraint firstItem="XyY-mW-Bj2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="7M4-zE-kSE"/>
+                            <constraint firstItem="uZp-4x-6sU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SP1-y2-KRb"/>
+                            <constraint firstItem="XyY-mW-Bj2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WuV-5d-UEZ"/>
+                            <constraint firstItem="uZp-4x-6sU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="774" id="hlc-vh-kiV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="XyY-mW-Bj2" id="58b-L5-lzb"/>
+                        <outlet property="m4aButton" destination="9AR-kW-MUX" id="v3z-7T-Gem"/>
+                        <outlet property="playButton" destination="jmK-cU-23q" id="6ZD-Jx-pmM"/>
+                        <outlet property="recordButton" destination="Lkd-Gg-1M2" id="4Qm-bq-ghV"/>
+                        <outlet property="volumeSlider" destination="7iK-uD-xH4" id="jFo-rY-cbw"/>
+                        <outlet property="wavButton" destination="qC3-OY-eQs" id="utd-in-6qs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play" width="23" height="24"/>
+        <image name="record" width="24" height="24"/>
+    </resources>
+</document>
